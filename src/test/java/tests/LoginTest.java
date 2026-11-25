@@ -13,7 +13,6 @@ public class LoginTest extends BaseTest {
         loginPage.login("locked_out_user", "secret_sauce");
         assertTrue(loginPage.errorMsgVisible());
         assertEquals(loginPage.getErrorMsgText(), "Epic sadface: Sorry, this user has been locked out.");
-
     }
 
     @Test
@@ -27,7 +26,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void passwordTest() {
         loginPage.open();
-        loginPage.loginError("standard_user");
+        loginPage.onlyPassword("standard_user");
         assertTrue(loginPage.errorMsgVisible());
         assertEquals(loginPage.getErrorMsgText(), "Epic sadface: Username is required");
     }
@@ -35,7 +34,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void passwordError() {
         loginPage.open();
-        loginPage.loginErrorThe("problem_user");
+        loginPage.loginOnly("problem_user");
         assertTrue(loginPage.errorMsgVisible());
         assertEquals(loginPage.getErrorMsgText(), "Epic sadface: Password is required");
     }

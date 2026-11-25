@@ -33,12 +33,12 @@ public class LoginPage {
         return driver.findElement(errorText).getText();
     }
 
-    public void loginError(String password) {
+    public void onlyPassword(String password) {
         driver.findElement(passwordInput).sendKeys(password);
         driver.findElement(submitBtn).click();
     }
 
-    public void loginErrorThe(String username) {
+    public void loginOnly(String username) {
         driver.findElement(loginInput).sendKeys(username);
         driver.findElement(submitBtn).click();
     }
